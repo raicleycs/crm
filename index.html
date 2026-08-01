@@ -17,71 +17,7 @@
     </script>
   </head>
   <body class="min-h-screen bg-slate-50 font-sans text-slate-800">
-    <div class="min-h-screen lg:grid lg:grid-cols-[256px_1fr]">
-      <aside class="hidden border-r border-slate-200 bg-white p-5 lg:block">
-        <a href="#" class="mb-10 flex items-center gap-3 px-2 text-xl font-bold text-slate-900">
-          <span class="grid h-9 w-9 place-items-center rounded-xl bg-brand-600 text-white">F</span>
-          FlowCRM
-        </a>
-
-        <nav class="space-y-1 text-sm font-medium" aria-label="Navegação principal">
-          <a class="flex items-center gap-3 rounded-lg bg-brand-50 px-3 py-2.5 text-brand-700" href="#dashboard">Visão geral</a>
-          <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50" href="#leads">Leads <span class="ml-auto rounded-full bg-slate-100 px-2 py-0.5 text-xs" data-leads-badge>0</span></a>
-          <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50" href="#clientes">Clientes</a>
-          <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50" href="#tarefas">Tarefas</a>
-          <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-500 hover:bg-slate-50" href="#relatorios">Relatórios</a>
-        </nav>
-
-        <div class="mt-10 border-t border-slate-100 pt-6">
-          <a class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-500 hover:bg-slate-50" href="#configuracoes">Configurações</a>
-          <div class="mt-5 flex items-center gap-3 rounded-xl bg-slate-50 p-3">
-            <div class="grid h-9 w-9 place-items-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">AM</div>
-            <div class="min-w-0"><p class="truncate text-sm font-semibold">Ana Martins</p><p class="text-xs text-slate-500">Administradora</p></div>
-          </div>
-        </div>
-      </aside>
-
-      <main class="min-w-0">
-        <header class="flex h-16 items-center justify-between border-b border-slate-200 bg-white px-5 sm:px-8">
-          <button class="font-bold text-slate-900 lg:hidden">FlowCRM</button>
-          <div class="hidden max-w-md flex-1 md:block"><label class="relative block"><span class="sr-only">Buscar</span><input class="w-full rounded-lg border-0 bg-slate-100 py-2 pl-4 pr-4 text-sm outline-none ring-brand-500 focus:ring-2" placeholder="Buscar cliente, lead ou tarefa..." type="search" /></label></div>
-          <div class="flex items-center gap-3"><button class="rounded-lg p-2 text-slate-500 hover:bg-slate-100" aria-label="Notificações">🔔</button><button class="rounded-lg bg-brand-600 px-3 py-2 text-sm font-semibold text-white hover:bg-brand-700" data-open-lead-modal>Novo lead</button></div>
-        </header>
-
-        <div class="mx-auto max-w-7xl p-5 sm:p-8">
-          <section class="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div><p class="mb-1 text-sm font-medium text-brand-600">Sexta-feira, 31 de julho</p><h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Bom dia, Ana! 👋</h1><p class="mt-1 text-sm text-slate-500">Aqui está o resumo do seu funil comercial.</p></div>
-            <button class="rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold shadow-sm hover:bg-slate-50" data-export-leads>Exportar leads</button>
-          </section>
-
-          <!-- Os valores começam estáticos para a primeira aula. O JS os substituirá. -->
-          <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Indicadores">
-            <article class="rounded-xl border border-slate-100 bg-white p-5 shadow-card"><p class="text-sm font-medium text-slate-500">Leads ativos</p><p class="mt-2 text-3xl font-bold" data-metric="activeLeads">24</p><p class="mt-2 text-xs font-medium text-emerald-600">↑ 12% desde o mês passado</p></article>
-            <article class="rounded-xl border border-slate-100 bg-white p-5 shadow-card"><p class="text-sm font-medium text-slate-500">Novos este mês</p><p class="mt-2 text-3xl font-bold" data-metric="newLeads">18</p><p class="mt-2 text-xs font-medium text-emerald-600">↑ 8% desde o mês passado</p></article>
-            <article class="rounded-xl border border-slate-100 bg-white p-5 shadow-card"><p class="text-sm font-medium text-slate-500">Em negociação</p><p class="mt-2 text-3xl font-bold" data-metric="negotiationLeads">9</p><p class="mt-2 text-xs font-medium text-slate-500">R$ 42.500 em potencial</p></article>
-            <article class="rounded-xl border border-slate-100 bg-white p-5 shadow-card"><p class="text-sm font-medium text-slate-500">Conversão</p><p class="mt-2 text-3xl font-bold" data-metric="conversion">31%</p><p class="mt-2 text-xs font-medium text-rose-600">↓ 2% desde o mês passado</p></article>
-          </section>
-
-          <section class="mt-7 grid gap-7 xl:grid-cols-[1.6fr_1fr]">
-            <article id="leads" class="overflow-hidden rounded-xl border border-slate-100 bg-white shadow-card">
-              <div class="flex items-center justify-between border-b border-slate-100 p-5"><div><h2 class="font-bold text-slate-900">Leads recentes</h2><p class="mt-1 text-sm text-slate-500">Acompanhe os contatos mais recentes.</p></div><button class="text-sm font-semibold text-brand-600 hover:text-brand-700">Ver todos</button></div>
-              <div class="overflow-x-auto"><table class="w-full min-w-[580px] text-left text-sm"><thead class="bg-slate-50 text-xs uppercase tracking-wide text-slate-500"><tr><th class="px-5 py-3 font-semibold">Contato</th><th class="px-5 py-3 font-semibold">Origem</th><th class="px-5 py-3 font-semibold">Etapa</th><th class="px-5 py-3 font-semibold">Responsável</th><th class="px-5 py-3"></th></tr></thead><tbody class="divide-y divide-slate-100" data-leads-list>
-                <tr><td class="px-5 py-4"><p class="font-semibold text-slate-800">Mariana Costa</p><p class="text-xs text-slate-500">mariana@lumina.com</p></td><td class="px-5 py-4 text-slate-600">Instagram</td><td class="px-5 py-4"><span class="rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700">Novo</span></td><td class="px-5 py-4 text-slate-600">Ana M.</td><td class="px-5 py-4 text-right"><button class="text-slate-400">•••</button></td></tr>
-                <tr><td class="px-5 py-4"><p class="font-semibold text-slate-800">Lucas Almeida</p><p class="text-xs text-slate-500">lucas@novaweb.com</p></td><td class="px-5 py-4 text-slate-600">Indicação</td><td class="px-5 py-4"><span class="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700">Contato feito</span></td><td class="px-5 py-4 text-slate-600">Carlos R.</td><td class="px-5 py-4 text-right"><button class="text-slate-400">•••</button></td></tr>
-              </tbody></table></div>
-            </article>
-
-            <article id="tarefas" class="rounded-xl border border-slate-100 bg-white p-5 shadow-card"><div class="flex items-center justify-between"><div><h2 class="font-bold text-slate-900">Próximas tarefas</h2><p class="mt-1 text-sm text-slate-500">O que precisa da sua atenção.</p></div><button class="text-xl text-brand-600" data-add-task aria-label="Adicionar tarefa">+</button></div><ul class="mt-5 space-y-3" data-task-list><li class="flex gap-3 rounded-lg bg-slate-50 p-3"><input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500" /><div><p class="text-sm font-semibold">Retornar para Mariana Costa</p><p class="mt-1 text-xs text-amber-600">Hoje, 14:00</p></div></li><li class="flex gap-3 rounded-lg bg-slate-50 p-3"><input type="checkbox" class="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500" /><div><p class="text-sm font-semibold">Enviar proposta para Nova Web</p><p class="mt-1 text-xs text-slate-500">Amanhã, 09:00</p></div></li></ul></article>
-          </section>
-        </div>
-      </main>
-    </div>
-
-    <dialog class="w-[min(92vw,440px)] rounded-2xl p-0 shadow-2xl backdrop:bg-slate-900/40" data-lead-modal>
-      <form class="p-6" data-lead-form method="dialog"><div class="flex items-start justify-between"><div><h2 class="text-xl font-bold">Cadastrar novo lead</h2><p class="mt-1 text-sm text-slate-500">A ação será conectada à API simulada na aula.</p></div><button value="cancel" class="text-slate-400" aria-label="Fechar">✕</button></div><div class="mt-5 space-y-4"><label class="block text-sm font-medium">Nome<input required name="name" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-brand-500" placeholder="Ex.: João Silva" /></label><label class="block text-sm font-medium">E-mail<input required name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 outline-none focus:ring-2 focus:ring-brand-500" placeholder="joao@empresa.com" /></label><label class="block text-sm font-medium">Origem<select name="source" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2"><option>Site</option><option>Instagram</option><option>Indicação</option></select></label></div><button class="mt-6 w-full rounded-lg bg-brand-600 py-2.5 text-sm font-semibold text-white hover:bg-brand-700" value="default">Salvar lead</button></form>
-    </dialog>
-
-    <!-- "type=module" habilita import/export; abra por servidor local, não por file:// -->
-    <script type="module" src="./js/app.js"></script>
+    <div id="app"></div>
+        <script type="module" src="./js/app.js"></script>
   </body>
 </html>
